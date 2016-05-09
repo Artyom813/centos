@@ -1,0 +1,20 @@
+---
+# defaults file for hetzner-install
+binary: /root/.oldroot/nfs/install/installimage
+boot_loader: grub
+raid:
+  active: 'no'
+  level: 0
+disks:
+  - sda
+  - sdb
+image: /root/images/CentOS-72-64-minimal.tar.gz
+partitions:
+  - /boot:ext3:512M
+  - lvm:vg0:all
+logical_volumes:
+  - vg0:root:/:ext4:30G
+  - vg0:var:/var:ext4:900G
+format_second: 'no'
+hostname: node14X
+key_url: https://gist.githubusercontent.com/asdasd.txt
